@@ -36,9 +36,6 @@ export class NewTextModeController extends ModeController {
             entityId: text.props.id,
         });
 
-        app.unselectAll();
-        app.select(text.props.id);
-
         // To leave focus at the new text entity
         ev.preventDefault();
     }

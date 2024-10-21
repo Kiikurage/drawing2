@@ -2,7 +2,8 @@
     "formatter": {
         "indentStyle": "space",
         "indentWidth": 4,
-        "formatWithErrors": true
+        "formatWithErrors": true,
+        "lineEnding": "lf"
     },
     "linter": {
         "rules": {

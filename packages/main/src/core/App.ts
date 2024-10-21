@@ -200,6 +200,9 @@ export class App {
         const selectedEntityIds = getSelectedEntityIds(
             this.appStateStore.getState().mode,
         );
+        if (selectedEntityIds.size === 0) {
+            return;
+        }
         this.canvasStateStore.edit((draft) => {
             draft.updateProperty([...selectedEntityIds], key, value);
         });

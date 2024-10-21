@@ -146,10 +146,13 @@ const TextViewInner = memo(function ShapeViewInner({
                         ev.target.setSelectionRange(0, ev.target.value.length);
                     }}
                     onChange={(ev) =>
-                        app.updateProperty(
-                            PROPERTY_KEY_CONTENT,
-                            ev.target.value,
-                        )
+                        app.canvasStateStore.edit((draft) => {
+                            draft.updateProperty(
+                                [shapeId],
+                                PROPERTY_KEY_CONTENT,
+                                ev.target.value,
+                            );
+                        })
                     }
                     onPointerDown={(ev) => ev.stopPropagation()}
                     value={content}
